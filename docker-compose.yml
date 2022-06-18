@@ -1,0 +1,30 @@
+version: "3"
+services:
+  demo-container-db:
+    image: postgres:14.3-alpine
+    mem_limit: 1536MB
+    mem_reservation: 1G
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+    - "5442:5432"
+    networks:
+    - PostgreSQL_network
+    volumes:
+    - PostgreSQL:/var/lib/postgresql/data
+  demo-pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+    - "8889:80"
+    networks:
+    - PostgreSQL_network
+networks:
+  PostgreSQL_network:
+    driver: bridge
+ 
+volumes:
+  PostgreSQL:
