@@ -30,3 +30,10 @@ Port: 5432
 Username: admin
 
 Password: admin
+
+============================
+spring.datasource.url=jdbc:postgresql://localhost:5442/postgres
+
+spring.datasource.username=admin
+
+spring.datasource.password=admin
