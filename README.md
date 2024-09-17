@@ -24,6 +24,9 @@ Password : password
 
 
 Host name/address: demo-container-db
+
 Port: 5432
+
 Username: admin
+
 Password: admin
